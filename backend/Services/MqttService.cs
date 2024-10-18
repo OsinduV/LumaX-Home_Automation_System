@@ -66,6 +66,7 @@ public class MqttService
             {
                 // Broadcast temperature data using SignalR
                 _logger.LogInformation($"Sending {payload} to SignalR");
+    
                 await _hubContext.Clients.All.SendAsync("ReceiveTemperature", payload);
             }
 
