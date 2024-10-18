@@ -1,0 +1,108 @@
+
+      <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">
+        Create your Account
+      </h2>
+  
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <!-- Full Name -->
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2" for="fullName">
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Enter your full name"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500"
+            formControlName="fullName"
+          />
+          <div class="text-red-500 text-sm" 
+          *ngIf="hasDisplayableError('fullName') && form.get('fullName')?.hasError('required')">
+            Please Enter Your Full Name.
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2" for="email">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500"
+            formControlName="email"
+            />
+            <div class="text-red-500 text-sm" 
+            *ngIf="hasDisplayableError('email')">
+              <div *ngIf="form.get('email')?.hasError('required')">
+                Please Enter Your Email Address.
+              </div>
+              <div *ngIf="form.get('email')?.hasError('email')">
+                Please Enter a valid Email Address.
+              </div>
+            </div>
+        </div>
+  
+        <!-- Password -->
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2" for="password">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500"
+            formControlName="password"
+            />
+            <div class="text-red-500 text-sm" 
+            *ngIf="hasDisplayableError('password')">
+              <div *ngIf="form.get('password')?.hasError('required')">
+                Please Enter a Password.
+              </div>
+              <div *ngIf="form.get('password')?.hasError('minlength')">
+                Atleast 6 characters required.
+              </div>
+              <div *ngIf="form.get('password')?.hasError('pattern')">
+                One or more special character(s).
+              </div>
+            </div>
+        </div>
+  
+        <!-- Confirm Password -->
+        <div class="mb-6">
+          <label class="block text-gray-700 font-medium mb-2" for="confirmPassword">
+            Confirm Password
+          </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm your password"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500"
+            formControlName="confirmPassword"
+            />
+          <div class="text-red-500 text-sm" 
+          *ngIf="hasDisplayableError('confirmPassword') && form.get('confirmPassword')?.hasError('passwordMismatch')">
+            Password Doesn't Match.
+          </div>
+        </div>
+  
+        <!-- Sign Up Button -->
+        <button
+          type="submit"
+          class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-md transition duration-100"
+        >
+          Sign Up
+        </button>
+  
+        <!-- Login Link -->
+        <p class="mt-4 text-center text-gray-600">
+          Already have an account?
+          <a href="#" class="text-indigo-500 hover:underline">Log in</a>
+        </p>
+      </form>
+
+  
+  
