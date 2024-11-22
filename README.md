@@ -8,6 +8,7 @@
 
 - **Real-time Temperature Monitoring**: See live temperature updates from connected rooms through the dashboard.
 - **Light Control**: Control the lighting in each room from anywhere using the web interface.
+- **User Authentication & Authorization**: Implemented with ASP.NET Core Identity to ensure secure access to the system.
 - **Scalability**: Designed to grow with additional functionalities and scale to larger industrial setups.
 
 ## Technology Stack
