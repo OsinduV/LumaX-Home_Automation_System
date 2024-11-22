@@ -18,9 +18,12 @@
   
 ### Backend
 - **ASP.NET Core**
+  - **MQTT** protocol for communication between ESP32 and backend.  
+  - **SignalR** for real-time data updates.  
+  - **ASP.NET Core Identity** for authentication and authorization.
   
 ### Communication
-  - **MQTT**: Efficient communication between the backend(ASP.NET Core) and the ESP32 hardware.
+  - **MQTT**: Communication between the backend(ASP.NET Core) and the ESP32 hardware.
   - **SignalR**: Real-time data transmission between frontend(Anguler) and backend(ASP.NET Core).
   
 ### Database
