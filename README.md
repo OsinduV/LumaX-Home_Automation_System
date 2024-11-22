@@ -23,7 +23,7 @@
   - **SignalR**: Real-time data transmission between frontend(Anguler) and backend(ASP.NET Core).
   
 ### Database
-- **MySQL**
+- **MySQL**, managed within a Docker environment.
 
 ### Hardware
 - **ESP32**: Microcontroller that handles sensors and devices for temperature monitoring and light control.
